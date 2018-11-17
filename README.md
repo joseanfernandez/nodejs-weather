@@ -14,6 +14,10 @@ npm install
 ```
 
 #### How to use it
+```console
+npm start
+```
 Add 2 parameters in the url, city01 and city02.
+
 [Try me!](http://localhost:8080?city01=Malaga&city02=London)
 
