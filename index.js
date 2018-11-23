@@ -23,8 +23,8 @@ server.route({
      
       try {
         const { res, payload } = await Wreck.get(url);
-        if (payload.length > 0) {
-          let payson = JSON.parse(payload);
+        let payson = JSON.parse(payload);
+        if (payson.query.length > 0) {
           data = payson.query.results.channel;
           let city1 = new city.City(data[0].location.city, data[0].item.condition.temp);
           let city2 = new city.City(data[1].location.city, data[1].item.condition.temp);
@@ -32,8 +32,7 @@ server.route({
           message = '<div style="padding: 25px; border: 2px solid black; text-align:justify; display: inline-block; font-size: 1.5em; box-shadow: 0px 0px 10px #000;">' 
                     + city1.toString() + '<br>' + city2.toString() + '<br>'
                     + 'Diferencia de temperatura: ' + city1.difference(city2) + '°C</div>';
-        } 
-       
+        }
       }
       catch(ex) {
         console.log(ex);
