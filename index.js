@@ -36,7 +36,6 @@ server.route({
        
       }
       catch(ex) {
-        console.log(ex);
         message = 'Parece que hay un error, por favor revisa la url. <br>' 
                   + 'Debería estar construida de esta forma: <a href="http://localhost:8080/?city01=Malaga&city02=London">http://localhost:8080/?city01=Malaga&city02=London</a>';
       }
