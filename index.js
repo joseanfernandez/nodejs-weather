@@ -4,7 +4,8 @@ const Wreck = require('wreck');
 const city = require('./City');
 
 const server = Hapi.server({
-    port: 8080
+    port: 8080,
+    host: 'localhost'
 });
 
 server.route({
